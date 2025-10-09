@@ -12,7 +12,7 @@ export default function ContactSection() {
 
     const formData = new FormData(event.target);
     try {
-      await fetch("/forms.html", {
+      await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
@@ -34,21 +34,16 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 bg-[#0D0E10] border-t border-white/10 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2
-          className="text-3xl md:text-4xl font-semibold mb-3"
-          style={{ color: colors.graphite }}
-        >
+        <h2 className="text-3xl md:text-4xl font-semibold mb-3" style={{ color: colors.graphite }}>
           Discreet Contact
         </h2>
         <p className="text-white/70 mb-10 max-w-2xl mx-auto">
           Prefer a direct introduction? Reach out below. All enquiries are handled in confidence.
         </p>
 
-        {/* FORM */}
         <form
           name="contact"
           onSubmit={handleSubmit}
-          data-netlify="true"
           netlify-honeypot="bot-field"
           className="mx-auto max-w-lg space-y-4 p-8 rounded-2xl bg-black/30 border border-white/10 shadow-xl backdrop-blur-md"
         >
@@ -59,29 +54,9 @@ export default function ContactSection() {
             </label>
           </p>
 
-          <input
-            name="name"
-            placeholder="Full Name"
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition"
-            required
-          />
-
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition"
-            required
-          />
-
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 focus:border-white/20 focus:ring-1 focus:ring-white/20 outline-none transition resize-none"
-            required
-          />
-
+          <input name="name" placeholder="Full Name" className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3" required />
+          <input name="email" type="email" placeholder="Email" className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3" required />
+          <textarea name="message" rows="5" placeholder="Your Message" className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3" required />
           <button
             type="submit"
             disabled={status === "submitting"}
@@ -92,7 +67,6 @@ export default function ContactSection() {
           </button>
         </form>
 
-        {/* SUCCESS / ERROR MESSAGE */}
         <AnimatePresence>
           {status === "success" && (
             <motion.div
@@ -105,7 +79,6 @@ export default function ContactSection() {
               Message sent successfully. We’ll be in touch shortly.
             </motion.div>
           )}
-
           {status === "error" && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -119,14 +92,10 @@ export default function ContactSection() {
           )}
         </AnimatePresence>
 
-        {/* CONTACT INFO */}
         <div className="mt-10 text-sm text-white/60 space-y-1">
           <p>
             or email us directly at{" "}
-            <a
-              href="mailto:concierge@arcbrim.com"
-              className="text-white hover:text-[#C8A968] transition"
-            >
+            <a href="mailto:concierge@arcbrim.com" className="text-white hover:text-[#C8A968] transition">
               concierge@arcbrim.com
             </a>
           </p>
