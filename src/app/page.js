@@ -22,7 +22,7 @@ export default function Page() {
   const openCalendly = useCallback(() => {
     if (typeof window !== "undefined" && window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: "https://calendly.com/your-handle/arcbrim-consult?hide_landing_page_details=1&hide_event_type_details=1",
+        url: "https://calendly.com/arcbrim?hide_landing_page_details=1&hide_event_type_details=1",
       });
     }
   }, []);
@@ -225,7 +225,7 @@ export default function Page() {
             </p>
             <ul className="text-white/70 text-sm space-y-3">
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-white/40" /> +1 (xxx) xxx-xxxx
+                <Phone className="h-4 w-4 text-white/40" /> +1 (801) 917-0892
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-white/40" /> concierge@arcbrim.com
