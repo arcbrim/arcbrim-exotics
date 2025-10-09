@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@netlify/next": "^1.4.9",
+    "@netlify/plugin-nextjs": "^5.13.5",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.545.0",
     "next": "15.5.4",

@@ -3,9 +3,8 @@
   publish = ".next"
 
 [[plugins]]
-  package = "@netlify/next"
+  package = "@netlify/plugin-nextjs"
 
-# Enable App Router + Forms compatibility
 [functions]
   included_files = ["public/**"]
 
