@@ -2,7 +2,11 @@
 
 import { useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Phone, Mail, Instagram } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
+import dynamic from "next/dynamic";
+
+// ✅ Import the new ContactSection (server-rendered for Netlify)
+const ContactSection = dynamic(() => import("./contact-section"), { ssr: true });
 
 const brand = {
   gold: "#C8A968",
@@ -22,7 +26,7 @@ export default function Page() {
   const openCalendly = useCallback(() => {
     if (typeof window !== "undefined" && window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: "https://calendly.com/arcbrim?hide_landing_page_details=1&hide_event_type_details=1",
+        url: "https://calendly.com/your-handle/arcbrim-consult?hide_landing_page_details=1&hide_event_type_details=1",
       });
     }
   }, []);
@@ -184,7 +188,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* APPOINTMENT — Overlay Calendly */}
+      {/* APPOINTMENT */}
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h2
@@ -210,77 +214,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CONTACT — Netlify Form */}
-      <section id="contact" className="py-24">
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12">
-          <motion.div {...fadeUp(0)}>
-            <h2
-              className="text-3xl font-semibold mb-4"
-              style={{ color: brand.graphite }}
-            >
-              Discreet Contact
-            </h2>
-            <p className="text-white/70 mb-6">
-              Prefer a direct introduction? Reach out anytime.
-            </p>
-            <ul className="text-white/70 text-sm space-y-3">
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-white/40" /> +1 (801) 917-0892
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-white/40" /> concierge@arcbrim.com
-              </li>
-              <li className="flex items-center gap-2">
-                <Instagram className="h-4 w-4 text-white/40" /> @arcbrim
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            className="space-y-4 p-6 rounded-2xl bg-black/30 border border-white/10"
-            {...fadeUp(0.1)}
-          >
-            {/* Netlify form requirements */}
-            <input type="hidden" name="form-name" value="contact" />
-            <p className="hidden">
-              <label>
-                Don’t fill this out: <input name="bot-field" />
-              </label>
-            </p>
-
-            <input
-              name="name"
-              placeholder="Full Name"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 focus:border-white/20 outline-none"
-              required
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 focus:border-white/20 outline-none"
-              required
-            />
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="Message"
-              className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 focus:border-white/20 outline-none"
-              required
-            />
-            <button
-              type="submit"
-              className="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition"
-            >
-              Send
-            </button>
-          </motion.form>
-        </div>
-      </section>
+      {/* ✅ CONTACT SECTION (Server-rendered for Netlify forms) */}
+      <ContactSection />
 
       {/* FOOTER */}
       <footer className="py-10 border-t border-white/10 px-6 text-sm text-white/55">
