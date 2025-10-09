@@ -1,11 +1,38 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 export default function ContactSection() {
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("submitting");
+
+    const formData = new FormData(event.target);
+    try {
+      await fetch("/forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      setStatus("success");
+      event.target.reset();
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch (err) {
+      console.error("Form submission failed:", err);
+      setStatus("error");
+    }
+  };
+
   const colors = {
     gold: "#C8A968",
     graphite: "#B3B6BC",
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0D0E10] border-t border-white/10">
+    <section id="contact" className="py-24 bg-[#0D0E10] border-t border-white/10 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2
           className="text-3xl md:text-4xl font-semibold mb-3"
@@ -17,9 +44,10 @@ export default function ContactSection() {
           Prefer a direct introduction? Reach out below. All enquiries are handled in confidence.
         </p>
 
+        {/* FORM */}
         <form
           name="contact"
-          method="POST"
+          onSubmit={handleSubmit}
           data-netlify="true"
           netlify-honeypot="bot-field"
           className="mx-auto max-w-lg space-y-4 p-8 rounded-2xl bg-black/30 border border-white/10 shadow-xl backdrop-blur-md"
@@ -56,13 +84,42 @@ export default function ContactSection() {
 
           <button
             type="submit"
-            className="w-full px-6 py-3 rounded-xl text-white font-medium tracking-wide transition-all duration-300 border border-white/20 hover:bg-white/10 hover:shadow-[0_0_15px_rgba(200,169,104,0.25)]"
+            disabled={status === "submitting"}
+            className="w-full px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300 text-white font-medium tracking-wide"
             style={{ color: colors.gold }}
           >
-            Send Securely
+            {status === "submitting" ? "Sending..." : "Send Securely"}
           </button>
         </form>
 
+        {/* SUCCESS / ERROR MESSAGE */}
+        <AnimatePresence>
+          {status === "success" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="mt-8 inline-block rounded-xl border border-[#C8A968]/30 bg-black/40 px-6 py-3 text-[#C8A968] shadow-lg"
+            >
+              Message sent successfully. We’ll be in touch shortly.
+            </motion.div>
+          )}
+
+          {status === "error" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="mt-8 inline-block rounded-xl border border-red-500/30 bg-black/40 px-6 py-3 text-red-400 shadow-lg"
+            >
+              Something went wrong. Please try again.
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* CONTACT INFO */}
         <div className="mt-10 text-sm text-white/60 space-y-1">
           <p>
             or email us directly at{" "}
