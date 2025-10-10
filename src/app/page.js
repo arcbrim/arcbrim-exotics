@@ -29,15 +29,15 @@ export default function Home() {
             For those who understand the value of motion.
           </p>
           <a
-            href="#experience"
+            href="#curated"
             className="inline-block px-8 py-3 border border-[#C8A968] text-[#C8A968] rounded-full hover:bg-[#C8A968]/10 transition duration-300"
           >
-            Discover More
+            View Collection
           </a>
         </div>
       </section>
 
-      {/* EXPERIENCE SECTION */}
+      {/* EXPERIENCE */}
       <section
         id="experience"
         className="relative py-32 bg-[#0D0E10] border-t border-white/10 overflow-hidden"
@@ -58,10 +58,10 @@ export default function Home() {
           </h2>
           <p className="text-white/70 max-w-3xl mx-auto leading-relaxed mb-8">
             Arcbrim Exotics offers more than vehicles — it offers access.
-            Every introduction is private, every journey bespoke. Whether pursuing
-            the quiet opulence of a Rolls-Royce Ghost or the adrenaline of a
-            McLaren 750S, our approach remains the same: discretion, precision,
-            and integrity.
+            Every introduction is private, every journey bespoke.
+            Whether pursuing the quiet opulence of a Rolls-Royce Ghost or
+            the adrenaline of a McLaren 750S, our approach remains the same:
+            discretion, precision, and integrity.
           </p>
           <p className="text-white/70 max-w-3xl mx-auto leading-relaxed">
             We work within a global network of collectors, manufacturers, and
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CURATED MACHINES SECTION */}
+      {/* CURATED MACHINES */}
       <section
         id="curated"
         className="py-24 px-6 border-t border-white/10 bg-black/20"
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRIVATE ACCESS SECTION */}
+      {/* PRIVATE ACCESS */}
       <section className="py-32 px-6 bg-[#0D0E10] border-t border-white/10 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#B3B6BC] mb-6">

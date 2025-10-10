@@ -7,13 +7,7 @@
   NETLIFY_NEXT_PLUGIN_SKIP_FORMS = "true"
   NEXT_USE_NETLIFY_EDGE = "true"
 
-[functions]
-  included_files = ["public/**"]
-
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
