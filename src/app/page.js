@@ -1,301 +1,143 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 
-import { useCallback } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Calendar } from "lucide-react";
-import dynamic from "next/dynamic";
-
-// Import the static ContactSection (server-rendered for Netlify forms)
-const ContactSection = dynamic(() => import("./contact-section"), { ssr: true });
-
-export default function Page() {
-  // Scroll-driven parallax
-  const { scrollYProgress } = useScroll();
-  const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.4]);
-
-  const brand = {
-    gold: "#C8A968",
-    graphite: "#B3B6BC",
-    dark: "#0D0E10",
-    slate: "#1A1C1F",
-  };
-
-  const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 24 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.7, delay, ease: "easeInOut" },
-    viewport: { once: true, amount: 0.6 },
-  });
-
-  const openCalendly = useCallback(() => {
-    if (typeof window !== "undefined" && window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: "https://calendly.com/your-handle/arcbrim-consult?hide_landing_page_details=1&hide_event_type_details=1",
-      });
-    }
-  }, []);
-
+export default function Home() {
   return (
-    <main className="relative overflow-hidden bg-[#0D0E10] text-white">
-      {/* === BACKGROUND PARALLAX LAYERS === */}
-      <motion.div
-        className="fixed inset-0 z-0"
-        style={{
-          y: y1,
-          opacity,
-          backgroundImage: "url('/texture-carbon.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          mixBlendMode: "overlay",
-        }}
-      />
-      <motion.div
-        className="fixed inset-0 z-0"
-        style={{
-          y: y2,
-          backgroundImage: "url('/texture-gold.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.15,
-        }}
-      />
-
-      {/* === CONTENT WRAPPER === */}
-      <div className="relative z-10">
-
-        {/* === NAVIGATION === */}
-        <header className="fixed top-0 inset-x-0 z-40 border-b border-white/10 bg-black/40 backdrop-blur">
-          <div className="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
-            <div className="flex items-center gap-3 select-none">
-              <div
-                className="h-9 w-9 grid place-items-center rounded-xl shadow"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(200,169,104,0.22), rgba(200,169,104,0.06))",
-                }}
-              >
-                <span className="text-2xl font-semibold text-[#C8A968]">A</span>
-              </div>
-              <div className="leading-tight">
-                <div className="font-semibold uppercase tracking-wide text-[#B3B6BC]">
-                  Arcbrim
-                </div>
-                <div className="text-[11px] tracking-[0.22em] text-white/55 -mt-0.5">
-                  EXOTICS
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={openCalendly}
-              className="group inline-flex items-center gap-2 text-sm text-white/80 hover:text-white"
-            >
-              Book Consult
-              <Calendar className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </button>
-          </div>
-        </header>
-
-        {/* === HERO SECTION === */}
-        <section className="relative h-[100svh] flex items-center">
-          <div className="max-w-7xl mx-auto px-6 pt-24 lg:pt-32 grid lg:grid-cols-2 gap-10 items-center">
-            <motion.div {...fadeUp(0)}>
-              <p className="inline-flex items-center gap-2 text-xs rounded-full border border-white/10 px-3 py-1.5 text-white/60">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#C8A968]" />
-                Private Automotive Atelier
-              </p>
-
-              <h1 className="mt-6 text-5xl md:text-7xl font-semibold tracking-tight text-[#B3B6BC]">
-                Access the Extraordinary.
-              </h1>
-
-              <p className="mt-5 text-lg text-white/70 max-w-xl">
-                Not for everyone. For the few who understand the art of rarity.
-                Arcbrim is an introduction—curation, acquisition, and quiet stewardship.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <button
-                  onClick={openCalendly}
-                  className="px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition inline-flex items-center gap-2"
-                >
-                  Begin a Private Consult
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-                <a
-                  href="#contact"
-                  className="px-5 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition"
-                >
-                  Contact
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 bg-black/30"
-              {...fadeUp(0.15)}
-            >
-              <div className="absolute inset-0 grid place-items-center">
-                <div className="relative inline-block">
-                 <img
-                  src="/arcbrim-logo.png"
-                  alt="Arcbrim Logo"
-                  className="h-36 opacity-90 relative z-10"
-                />
-                {/* ✨ Light sweep overlay */}
-                <motion.div
-                  initial={{ x: "-150%" }}
-                  animate={{ x: "150%" }}
-                  transition={{
-                    repeat: Infinity,
-                    repeatType: "mirror",
-                    duration: 6,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                  className="absolute inset-0 z-20 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.25) 50%, transparent 80%)",
-                    mixBlendMode: "overlay",
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* subtle gold radial glow */}
-            <div
-              className="absolute -inset-20 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(40% 25% at 60% 20%, rgba(200,169,104,0.18), transparent 70%)",
-              }}
-            />
-            </motion.div>
-          </div>
-
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-widest">
-            SCROLL
-          </div>
-        </section>
-
-        {/* === EXPERIENCE SECTION === */}
-        <section className="py-24 relative">
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(200,169,104,0.05) 40%, rgba(0,0,0,0) 100%)",
-            }}
+    <main className="min-h-screen bg-[#0D0E10] text-white font-light tracking-wide overflow-x-hidden">
+      {/* HERO */}
+      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32 border-b border-white/10 overflow-hidden">
+        <Image
+          src="/hero-lamborghini-aventador-svj.jpg"
+          alt="Lamborghini Aventador SVJ"
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+        <div className="relative z-10 max-w-4xl">
+          <Image
+            src="/arcbrim-logo.png"
+            alt="Arcbrim Exotics Logo"
+            width={160}
+            height={160}
+            className="mx-auto mb-8"
           />
-          <div className="max-w-4xl mx-auto px-6 text-center space-y-4">
-            {[
-              "Arcbrim is not a dealership.",
-              "It is an introduction to rarity.",
-              "A concierge for those who prefer to move unseen.",
-            ].map((line, i) => (
-              <motion.p
-                key={i}
-                className="text-xl md:text-2xl text-white/75"
-                {...fadeUp(0.1 * i)}
-              >
-                {line}
-              </motion.p>
-            ))}
-          </div>
-        </section>
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-[#B3B6BC] mb-4">
+            Access the Extraordinary
+          </h1>
+          <p className="text-white/70 max-w-xl mx-auto leading-relaxed mb-8">
+            Private introductions to performance, heritage, and modern expression.
+            For those who understand the value of motion.
+          </p>
+          <a
+            href="#experience"
+            className="inline-block px-8 py-3 border border-[#C8A968] text-[#C8A968] rounded-full hover:bg-[#C8A968]/10 transition duration-300"
+          >
+            Discover More
+          </a>
+        </div>
+      </section>
 
-        {/* === CONCIERGE SECTION === */}
-        <section className="py-24 border-y border-white/10 bg-[#1A1C1F]">
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Acquisition",
-                desc: "Sourcing the unobtainable via a private global network and protected transactions.",
-              },
-              {
-                title: "Curation",
-                desc: "Portfolio strategy, provenance research, and value preservation for discerning collections.",
-              },
-              {
-                title: "Advisory",
-                desc: "Long-horizon guidance, discreet logistics, and white-glove delivery—beyond ownership.",
-              },
-            ].map((c, i) => (
-              <motion.div
-                key={c.title}
-                className="p-6 rounded-2xl border border-white/10 bg-black/30 hover:bg-black/40 transition shadow-xl"
-                {...fadeUp(0.1 * i)}
-              >
-                <h3
-                  className="text-xl font-semibold mb-2"
-                  style={{ color: brand.gold }}
-                >
-                  {c.title}
-                </h3>
-                <p className="text-sm text-white/70 leading-relaxed">
-                  {c.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+      {/* EXPERIENCE SECTION */}
+      <section
+        id="experience"
+        className="relative py-32 bg-[#0D0E10] border-t border-white/10 overflow-hidden"
+      >
+        <div className="absolute inset-0 opacity-5 flex items-center justify-center">
+          <Image
+            src="/arcbrim-logo.png"
+            alt="Arcbrim Logo Watermark"
+            width={500}
+            height={500}
+            className="object-contain"
+          />
+        </div>
 
-        {/* === APPOINTMENT SECTION === */}
-        <section className="py-24">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <motion.h2
-              className="text-3xl md:text-4xl font-semibold"
-              style={{ color: brand.graphite }}
-              {...fadeUp(0)}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-[#B3B6BC]">
+            The Experience
+          </h2>
+          <p className="text-white/70 max-w-3xl mx-auto leading-relaxed mb-8">
+            Arcbrim Exotics offers more than vehicles — it offers access.
+            Every introduction is private, every journey bespoke. Whether pursuing
+            the quiet opulence of a Rolls-Royce Ghost or the adrenaline of a
+            McLaren 750S, our approach remains the same: discretion, precision,
+            and integrity.
+          </p>
+          <p className="text-white/70 max-w-3xl mx-auto leading-relaxed">
+            We work within a global network of collectors, manufacturers, and
+            curators to secure automotive excellence. The experience is not
+            transactional — it’s personal.
+          </p>
+        </div>
+      </section>
+
+      {/* CURATED MACHINES SECTION */}
+      <section
+        id="curated"
+        className="py-24 px-6 border-t border-white/10 bg-black/20"
+      >
+        <div className="max-w-6xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#B3B6BC] mb-4">
+            Curated Machines
+          </h2>
+          <p className="text-white/70 max-w-2xl mx-auto">
+            Icons of performance and design — meticulously sourced, quietly delivered.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {[
+            { src: "/rolls-royce-ghost.jpg", alt: "Rolls-Royce Ghost" },
+            { src: "/aston-martin-vanquish.jpg", alt: "Aston Martin Vanquish" },
+            { src: "/mclaren-750s.jpg", alt: "McLaren 750S" },
+            { src: "/porsche-992-turbo-s.jpg", alt: "Porsche 992 Turbo S" },
+            { src: "/bugatti-chiron.jpg", alt: "Bugatti Chiron" },
+          ].map((car, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-2xl border border-white/5"
             >
-              Private Appointment
-            </motion.h2>
-            <motion.p className="mt-3 text-white/70" {...fadeUp(0.08)}>
-              For introductions, by appointment only.
-            </motion.p>
-            <motion.div {...fadeUp(0.16)} className="mt-8">
-              <button
-                onClick={openCalendly}
-                className="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition inline-flex items-center gap-2"
-                aria-label="Book a private consultation"
-              >
-                Book Your Private Consultation
-                <Calendar className="h-4 w-4" />
-              </button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* === CONTACT SECTION === */}
-        <ContactSection />
-
-        {/* === FOOTER === */}
-        <footer className="py-10 border-t border-white/10 px-6 text-sm text-white/55">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div
-                className="h-7 w-7 grid place-items-center rounded-lg"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(200,169,104,0.18), rgba(200,169,104,0.06))",
-                }}
-              >
-                <span className="text-lg font-semibold text-[#C8A968]">A</span>
+              <Image
+                src={car.src}
+                alt={car.alt}
+                width={800}
+                height={600}
+                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <p className="text-[#C8A968] text-lg font-medium tracking-wide">
+                  {car.alt}
+                </p>
               </div>
-              <span>
-                © {new Date().getFullYear()} Arcbrim Exotics. All rights
-                reserved.
-              </span>
             </div>
-            <div className="text-xs text-white/40">
-              Curating the World’s Finest Machines.
-            </div>
-          </div>
-        </footer>
-      </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PRIVATE ACCESS SECTION */}
+      <section className="py-32 px-6 bg-[#0D0E10] border-t border-white/10 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#B3B6BC] mb-6">
+            Private Access
+          </h2>
+          <p className="text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Arcbrim Exotics operates by introduction.  
+            If you would like to be considered for private acquisition access or
+            collaboration, please request a consultation below.
+          </p>
+          <Link
+            href="/#contact"
+            className="inline-block px-10 py-3 rounded-full border border-[#C8A968] text-[#C8A968] hover:bg-[#C8A968]/10 transition duration-300"
+          >
+            Request Access
+          </Link>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
+        <p>© {new Date().getFullYear()} Arcbrim Exotics — Access the Extraordinary</p>
+      </footer>
     </main>
   );
 }

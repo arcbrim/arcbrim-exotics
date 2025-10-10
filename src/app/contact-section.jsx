@@ -99,7 +99,6 @@ export default function ContactSection() {
               concierge@arcbrim.com
             </a>
           </p>
-          <p>+1 (xxx) xxx-xxxx</p>
         </div>
       </div>
     </section>
