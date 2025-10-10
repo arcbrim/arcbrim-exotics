@@ -90,6 +90,7 @@ export default function Home() {
             { src: "/rolls-royce-ghost.jpg", alt: "Rolls-Royce Ghost" },
             { src: "/aston-martin-vanquish.jpg", alt: "Aston Martin Vanquish" },
             { src: "/mclaren-750s.jpg", alt: "McLaren 750S" },
+            { src: "/ferrari-812-gts.jpg", alt: "Ferrari 812 GTS" },
             { src: "/porsche-992-turbo-s.jpg", alt: "Porsche 992 Turbo S" },
             { src: "/bugatti-chiron.jpg", alt: "Bugatti Chiron" },
           ].map((car, index) => (
