@@ -19,7 +19,7 @@ export default function CalendlySection() {
 
         <div className="rounded-2xl overflow-hidden shadow-lg border border-[#C8A968]/10">
           <InlineWidget
-            url="https://calendly.com/arcbrim/consultation"
+            url="https://calendly.com/arcbrim"
             styles={{
               height: "700px",
               backgroundColor: "#0D0E10",
