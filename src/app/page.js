@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import CalendlySection from "./components/CalendlySection";
+
 
 export default function Home() {
   return (
@@ -136,8 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CALENDLY SECTION */} 
-      <CalendlySection />
+
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
