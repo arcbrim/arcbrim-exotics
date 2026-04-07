@@ -1,0 +1,589 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout current="home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media">
+      <img
+        src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1800&auto=format&fit=crop&q=80"
+        alt="Exotic vehicle"
+        class="hero-bg"
+        loading="eager"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content container">
+      <p class="hero-label">Private Automotive Brokerage</p>
+      <h1 class="hero-headline">Access the Extraordinary</h1>
+      <p class="hero-sub">A private brokerage for the acquisition and placement of exotic and luxury vehicles. </br> We do not sell. We source, qualify, and execute — on your terms.</p>
+      <a href="/inquiry" class="cta">Request an Introduction</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- Marquee Strip -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Ferrari</span><span class="dot">·</span>
+      <span>Lamborghini</span><span class="dot">·</span>
+      <span>McLaren</span><span class="dot">·</span>
+      <span>Rolls-Royce</span><span class="dot">·</span>
+      <span>Bugatti</span><span class="dot">·</span>
+      <span>Porsche</span><span class="dot">·</span>
+      <span>Koenigsegg</span><span class="dot">·</span>
+      <span>Bentley</span><span class="dot">·</span>
+      <span>Aston Martin</span><span class="dot">·</span>
+      <span>Ferrari</span><span class="dot">·</span>
+      <span>Lamborghini</span><span class="dot">·</span>
+      <span>McLaren</span><span class="dot">·</span>
+      <span>Rolls-Royce</span><span class="dot">·</span>
+      <span>Bugatti</span><span class="dot">·</span>
+      <span>Porsche</span><span class="dot">·</span>
+      <span>Koenigsegg</span><span class="dot">·</span>
+      <span>Bentley</span><span class="dot">·</span>
+      <span>Aston Martin</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- What We Do -->
+  <section class="section intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p class="label">The Service</p>
+          <h2>Not a dealership.<br />Not a listing platform.</h2>
+          <p>Arcbrim Exotics operates as a concierge brokerage — connecting serious buyers and sellers of exotic, luxury, and collector vehicles through a relationship-first model built on discretion and transaction certainty.</p>
+          <p>Every engagement begins with understanding what you are truly looking for. We work within a curated network of collectors, dealers, and private owners across the Mountain West and beyond to identify the right vehicle — or the right buyer — at the right moment.</p>
+          <p class="italic-close">There is no pressure. There is no inventory. There is only execution.</p>
+        </div>
+        <div class="intro-image-pair">
+          <div class="pair-img pair-img--main">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&auto=format&fit=crop&q=80"
+              alt="Luxury vehicle"
+              loading="lazy"
+            />
+          </div>
+          <div class="pair-img pair-img--accent">
+            <img
+              src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=700&auto=format&fit=crop&q=80"
+              alt="Performance vehicle"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Machines Gallery -->
+  <section class="gallery-section">
+    <div class="gallery-header container">
+      <p class="label">Curated Machines</p>
+      <h2>Icons of performance and design —<br />meticulously sourced, quietly delivered.</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="/images/rolls-royce-ghost.jpg" alt="Rolls-Royce Wraith" loading="lazy" />
+        <div class="gallery-caption">
+          <span class="caption-brand">Rolls-Royce</span>
+          <span class="caption-model">Wraith</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/mclaren720.jpg" alt="McLaren 720S" loading="lazy" style="object-position: center center;" />
+        <div class="gallery-caption">
+          <span class="caption-brand">McLaren</span>
+          <span class="caption-model">720S</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/ferarri-f8.jpg" alt="Ferrari F8 Tributo" loading="lazy" />
+        <div class="gallery-caption">
+          <span class="caption-brand">Ferrari</span>
+          <span class="caption-model">F8 Tributo</span>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="/images/aston-martin-vantage.jpg" alt="Aston Martin Vantage" loading="lazy" style="object-position: center 30%;" />
+        <div class="gallery-caption">
+          <span class="caption-brand">Aston Martin</span>
+          <span class="caption-model">Vantage</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/lamborghini-hurcan-spyder.jpg" alt="Lamborghini Huracán Spyder" loading="lazy" />
+        <div class="gallery-caption">
+          <span class="caption-brand">Lamborghini</span>
+          <span class="caption-model">Huracán Spyder</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/porsche-911-gt3.jpg" alt="Porsche 911 GT3" loading="lazy" />
+        <div class="gallery-caption">
+          <span class="caption-brand">Porsche</span>
+          <span class="caption-model">911 GT3</span>
+        </div>
+      </div>
+
+      <div class="gallery-spacer"></div>
+      <div class="gallery-item">
+        <img src="/images/m4competition.jpg" alt="BMW M4 Competition" loading="lazy" style="object-position: center 40%;" />
+        <div class="gallery-caption">
+          <span class="caption-brand">BMW</span>
+          <span class="caption-model">M4 Competition</span>
+        </div>
+      </div>
+      <div class="gallery-spacer"></div>
+
+      <!-- Collector & Classic divider -->
+      <div class="gallery-classics-divider">
+        <span class="label">Collector & Classic</span>
+        <div class="classics-rule"></div>
+      </div>
+
+      <div class="gallery-item gallery-item--classic">
+        <img src="/images/1967-mustang-eleanor.jpg" alt="1967 Ford Mustang Eleanor" loading="lazy" />
+        <div class="gallery-caption">
+          <span class="caption-era">1967</span>
+          <span class="caption-brand">Ford</span>
+          <span class="caption-model">Mustang Fastback</span>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--classic">
+        <img src="/images/corvette-stingray.jpg" alt="Corvette Sting Ray" loading="lazy" style="object-position: center 20%;" />
+        <div class="gallery-caption">
+          <span class="caption-era">1963</span>
+          <span class="caption-brand">Chevrolet</span>
+          <span class="caption-model">Corvette Sting Ray</span>
+        </div>
+      </div>
+      <div class="gallery-item gallery-item--classic">
+        <img src="/images/70-chevelle.jpg" alt="1970 Chevrolet Chevelle SS" loading="lazy" />
+        <div class="gallery-caption">
+          <span class="caption-era">1970</span>
+          <span class="caption-brand">Chevrolet</span>
+          <span class="caption-model">Chevelle SS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="process-section">
+    <div class="container">
+      <div class="process-header">
+        <p class="label">How It Works</p>
+        <h2>Four steps. Total discretion.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-num-wrap"><span class="process-num">01</span><div class="process-line"></div></div>
+          <h3>Introduction</h3>
+          <p>You reach out. We listen. Every engagement begins with a private conversation to understand your objectives, constraints, and timeline.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num-wrap"><span class="process-num">02</span><div class="process-line"></div></div>
+          <h3>Qualification</h3>
+          <p>We confirm alignment — on the vehicle, the transaction structure, and the standards of execution. Not every inquiry becomes an engagement. That selectivity protects you.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num-wrap"><span class="process-num">03</span><div class="process-line"></div></div>
+          <h3>Sourcing</h3>
+          <p>We activate our network to identify the right vehicle or the right buyer. Quietly. Without fanfare. Without exposing your position prematurely.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num-wrap"><span class="process-num">04</span><div class="process-line"></div></div>
+          <h3>Execution</h3>
+          <p>We manage the transaction from introduction through close — coordinating inspection, transport, title, and all necessary parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Atmospheric Divider -->
+  <div class="atmosphere-band">
+    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1800&auto=format&fit=crop&q=70" alt="" aria-hidden="true" loading="lazy" class="atmosphere-img" />
+    <div class="atmosphere-overlay"></div>
+    <div class="atmosphere-text container">
+      <blockquote>"The right introduction<br />changes everything."</blockquote>
+    </div>
+  </div>
+
+  <!-- Vehicle Categories -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-label">
+          <p class="label">What We Handle</p>
+        </div>
+        <div class="col-content">
+          <h2>The vehicles that require<br />a different conversation.</h2>
+          <p>Arcbrim Exotics works across the full spectrum of exceptional vehicles — each category requiring its own approach, network, and level of care.</p>
+          <div class="category-list">
+            <div class="category-item"><span class="category-name">Exotic & Supercar</span><span class="category-desc">Lamborghini, Ferrari, McLaren, Bugatti, Koenigsegg</span></div>
+            <div class="category-item"><span class="category-name">Ultra-Luxury</span><span class="category-desc">Rolls-Royce, Bentley, Aston Martin, Maserati</span></div>
+            <div class="category-item"><span class="category-name">Performance & Sport</span><span class="category-desc">Porsche, AMG, BMW M, Audi RS</span></div>
+            <div class="category-item"><span class="category-name">Collector & Classic</span><span class="category-desc">Investment-grade vehicles of historical significance</span></div>
+            <div class="category-item"><span class="category-name">Motorcycles</span><span class="category-desc">High-end and collector motorcycles handled with the same care</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Private Access CTA -->
+  <section class="cta-section">
+    <div class="cta-media">
+      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1800&auto=format&fit=crop&q=80" alt="" aria-hidden="true" loading="lazy" class="cta-bg" />
+      <div class="cta-overlay"></div>
+    </div>
+    <div class="container cta-content">
+      <p class="label" style="color: rgba(184,154,90,0.8); margin-bottom: 1.5rem;">Private Access</p>
+      <h2 class="cta-headline">If the right introduction<br />matters to you,<br />we should speak.</h2>
+      <p class="cta-sub">Arcbrim Exotics operates by introduction. If your objectives align with how we work, we welcome the conversation.</p>
+      <a href="/inquiry" class="cta-btn">Request an Introduction</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-media { position: absolute; inset: 0; z-index: 0; }
+  .hero-bg {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%;
+    transform: scale(1.04);
+    animation: heroScale 12s ease-out forwards;
+  }
+  @keyframes heroScale {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1.00); }
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,20,18,0.97) 0%, rgba(20,20,18,0.78) 45%, rgba(20,20,18,0.60) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding-bottom: clamp(4rem, 10vw, 7rem);
+    animation: fadeUp 1.2s ease both; animation-delay: 0.3s;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-label {
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--color-gold); margin-bottom: 1.75rem;
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 10vw, 7.5rem);
+    font-weight: 300; line-height: 1.02; letter-spacing: -0.01em;
+    color: var(--color-text); margin-bottom: 2rem;
+  }
+  .hero-sub {
+    font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+    color: rgba(232,230,224,0.65); max-width: 70ch;
+    line-height: 1.85; margin-bottom: 3rem; font-weight: 300;
+  }
+  .cta {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--color-gold);
+    border: 1px solid rgba(184,154,90,0.5); padding: 1rem 2.25rem;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .cta:hover { background-color: var(--color-gold-muted); border-color: var(--color-gold); }
+  .hero-scroll-hint {
+    position: absolute; bottom: 2.5rem; right: clamp(1.5rem, 5vw, 3rem); z-index: 2;
+  }
+  .scroll-line {
+    display: block; width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--color-gold));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { opacity: 0.3; transform: scaleY(0.6); }
+    50%     { opacity: 0.9; transform: scaleY(1); }
+  }
+
+  /* Marquee */
+  .marquee-strip {
+    overflow: hidden; border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0; background: var(--color-surface);
+  }
+  .marquee-track {
+    display: flex; gap: 2rem; width: max-content;
+    animation: marquee 28s linear infinite;
+  }
+  .marquee-track span {
+    font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--color-muted); white-space: nowrap;
+  }
+  .marquee-track .dot { color: var(--color-gold); letter-spacing: 0; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Intro Section */
+  .section { padding: var(--section-padding) 0; }
+  .intro-section { padding: var(--section-padding) 0; }
+  .intro-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem); align-items: center;
+  }
+  .label {
+    font-size: 0.68rem; font-weight: 400; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--color-muted);
+  }
+  .intro-text .label { margin-bottom: 1.5rem; }
+  .intro-text h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 300; color: var(--color-text); line-height: 1.15;
+    margin-bottom: 1.75rem; letter-spacing: 0.01em;
+  }
+  .intro-text p {
+    font-size: 0.93rem; color: var(--color-muted);
+    line-height: 1.85; margin-bottom: 1.25rem; max-width: 54ch;
+  }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .italic-close {
+    font-family: var(--font-display) !important; font-style: italic;
+    font-size: 1.1rem !important; color: rgba(232,230,224,0.6) !important;
+  }
+  .intro-image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 3px;
+    align-self: stretch;
+  }
+  .pair-img { overflow: hidden; border-radius: 2px; }
+  .pair-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+  .pair-img:hover img { transform: scale(1.04); }
+  .pair-img--main {
+    grid-column: 1 / -1;
+    aspect-ratio: 16/9;
+  }
+  .pair-img--accent {
+    grid-column: 1 / -1;
+    aspect-ratio: 21/9;
+  }
+
+  /* Gallery */
+  .gallery-section { padding-top: var(--section-padding); }
+  .gallery-header { margin-bottom: 3rem; }
+  .gallery-header .label { margin-bottom: 1rem; }
+  .gallery-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300; color: var(--color-text); line-height: 1.2; letter-spacing: 0.01em;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+  .gallery-item { position: relative; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+  .gallery-item--tall { aspect-ratio: 4/3; }
+  .gallery-classics-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem clamp(1.5rem, 5vw, 3rem) 0.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .gallery-classics-divider .label { white-space: nowrap; }
+  .classics-rule { flex: 1; height: 1px; background: var(--color-border); }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.5s ease;
+    filter: brightness(0.85) saturate(0.9);
+  }
+  .gallery-item:hover img { transform: scale(1.06); filter: brightness(1.0) saturate(1.05); }
+  .gallery-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 2.5rem 1.5rem 1.25rem;
+    background: linear-gradient(to top, rgba(20,20,18,0.9) 0%, transparent 100%);
+    transform: translateY(100%); transition: transform 0.4s ease;
+    display: flex; flex-direction: column; gap: 0.25rem;
+  }
+  .gallery-item:hover .gallery-caption { transform: translateY(0); }
+  .caption-brand {
+    font-size: 0.65rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--color-gold);
+  }
+  .caption-model {
+    font-family: var(--font-display);
+    font-size: 1.25rem; font-weight: 300; color: var(--color-text);
+  }
+  .gallery-spacer { aspect-ratio: 4/3; background: var(--color-bg); }
+  .gallery-item--classic {
+    border-top: 2px solid rgba(184,154,90,0.25);
+  }
+
+  /* Process */
+  .process-section {
+    padding: var(--section-padding) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .process-header { margin-bottom: 4rem; }
+  .process-header .label { margin-bottom: 1rem; }
+  .process-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300; color: var(--color-text); line-height: 1.2;
+  }
+  .process-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+  .process-item { display: flex; flex-direction: column; gap: 1.25rem; }
+  .process-num-wrap { display: flex; align-items: center; gap: 1rem; }
+  .process-num {
+    font-family: var(--font-display); font-size: 0.75rem; font-weight: 400;
+    color: var(--color-gold); letter-spacing: 0.1em; white-space: nowrap;
+  }
+  .process-line { flex: 1; height: 1px; background: var(--color-border); }
+  .process-item h3 {
+    font-family: var(--font-display); font-size: 1.25rem;
+    font-weight: 400; color: var(--color-text); line-height: 1.2;
+  }
+  .process-item p { font-size: 0.875rem; color: var(--color-muted); line-height: 1.8; }
+
+  /* Atmosphere band */
+  .atmosphere-band {
+    position: relative; height: 420px; overflow: hidden;
+  }
+  .atmosphere-img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+  }
+  .atmosphere-overlay {
+    position: absolute; inset: 0; background: rgba(20,20,18,0.72);
+  }
+  .atmosphere-text {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; align-items: center;
+  }
+  .atmosphere-text blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 3.25rem);
+    font-weight: 300; font-style: italic;
+    color: var(--color-text); line-height: 1.25; max-width: 24ch;
+    border-left: 2px solid var(--color-gold); padding-left: 2rem;
+  }
+
+  /* Categories */
+  .categories-section {
+    padding: var(--section-padding) 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .two-col {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: clamp(2rem, 5vw, 5rem); align-items: start;
+  }
+  .col-label { padding-top: 0.5rem; }
+  .col-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 300; color: var(--color-text); line-height: 1.2;
+    margin-bottom: 1.5rem; letter-spacing: 0.01em;
+  }
+  .col-content p {
+    font-size: 0.93rem; color: var(--color-muted);
+    line-height: 1.8; max-width: 60ch; margin-bottom: 1.25rem;
+  }
+  .category-list { margin-top: 2.5rem; border-top: 1px solid var(--color-border); }
+  .category-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 2rem; padding: 1.25rem 0; border-bottom: 1px solid var(--color-border);
+    transition: padding-left 0.25s ease;
+  }
+  .category-item:hover { padding-left: 0.75rem; }
+  .category-name {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 400;
+    color: var(--color-text); white-space: nowrap; transition: color 0.2s ease;
+  }
+  .category-item:hover .category-name { color: var(--color-gold); }
+  .category-desc { font-size: 0.78rem; color: var(--color-muted); text-align: right; }
+
+  /* CTA Section */
+  .cta-section {
+    position: relative; min-height: 560px;
+    display: flex; align-items: center; overflow: hidden;
+  }
+  .cta-media { position: absolute; inset: 0; z-index: 0; }
+  .cta-bg {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 60%;
+  }
+  .cta-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(20,20,18,0.95) 0%, rgba(20,20,18,0.7) 60%, rgba(20,20,18,0.4) 100%);
+  }
+  .cta-content {
+    position: relative; z-index: 2;
+    padding-top: clamp(4rem, 10vw, 7rem);
+    padding-bottom: clamp(4rem, 10vw, 7rem);
+  }
+  .cta-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-weight: 300; color: var(--color-text); line-height: 1.15;
+    max-width: 20ch; margin-bottom: 1.5rem; letter-spacing: 0.01em;
+  }
+  .cta-sub {
+    font-size: 0.93rem; color: rgba(232,230,224,0.6);
+    max-width: 48ch; line-height: 1.8; margin-bottom: 2.75rem;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-size: 0.72rem; font-weight: 400; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--color-gold);
+    border: 1px solid rgba(184,154,90,0.5); padding: 1rem 2.25rem;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+  .cta-btn:hover { background-color: var(--color-gold-muted); border-color: var(--color-gold); }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .intro-image-pair { gap: 3px; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .category-item { flex-direction: column; gap: 0.25rem; }
+    .category-desc { text-align: left; }
+  }
+</style>

@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Inquiry — Arcbrim Exotics"
+  description="Request a private introduction with Arcbrim Exotics."
+  current="inquiry"
+>
+
+  <section class="hero">
+    <div class="container">
+      <p class="label">Inquiry</p>
+      <h1>Request an Introduction</h1>
+      <p class="hero-sub">Arcbrim Exotics operates by introduction. Share the context of your inquiry below and we will be in touch directly if there is alignment.</p>
+    </div>
+  </section>
+
+  <div class="container"><div class="rule"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-label">
+          <p class="label">Your Inquiry</p>
+        </div>
+        <div class="col-form">
+          <form class="inquiry-form" name="contact" method="POST" netlify>
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="field">
+              <label for="interest">Nature of Inquiry</label>
+              <select id="interest" name="interest">
+                <option value="">Select one</option>
+                <option value="acquisition">Acquiring a vehicle</option>
+                <option value="placement">Placing a vehicle</option>
+                <option value="both">Both acquisition and placement</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Tell us about your objectives</label>
+              <textarea id="message" name="message" rows="6" placeholder="Vehicle type, timeline, any relevant context."></textarea>
+            </div>
+
+            <button type="submit" class="submit">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--section-padding) 0 clamp(3rem, 6vw, 5rem);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    max-width: 52ch;
+    line-height: 1.8;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .rule {
+    height: 1px;
+    background-color: var(--color-border);
+  }
+
+  .section {
+    padding: var(--section-padding) 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .col-label { padding-top: 0.5rem; }
+
+  .inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 560px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 0.875rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    appearance: none;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: rgba(184, 154, 90, 0.5);
+  }
+
+  textarea { resize: vertical; line-height: 1.7; }
+
+  .submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    background: transparent;
+    border: 1px solid rgba(184, 154, 90, 0.4);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+    align-self: flex-start;
+  }
+
+  .submit:hover {
+    background-color: var(--color-gold-muted);
+    border-color: var(--color-gold);
+  }
+
+  @media (max-width: 720px) {
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

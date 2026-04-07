@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Approach — Arcbrim Exotics"
+  description="How Arcbrim Exotics approaches every acquisition and placement engagement."
+  current="approach"
+>
+
+  <section class="hero">
+    <div class="container">
+      <p class="label">Approach</p>
+      <h1>We do not operate like a dealership.<br />We operate like a trusted advisor.</h1>
+    </div>
+  </section>
+
+  <div class="container"><div class="rule"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-label"><p class="label">Philosophy</p></div>
+        <div class="col-content">
+          <h2>Authority-led. Relationship-first.</h2>
+          <p>Arcbrim does not sell. Every conversation is diagnostic — designed to confirm alignment rather than persuade. If your objectives, timeline, and standards align with how we work, we proceed. If they do not, we say so plainly.</p>
+          <p>This selectivity is not exclusivity for its own sake. It is how we protect the quality of every engagement we take on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="rule"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-label"><p class="label">Discretion</p></div>
+        <div class="col-content">
+          <h2>Your position is never exposed prematurely.</h2>
+          <p>Whether you are acquiring or placing a vehicle, your identity and intent are protected throughout the engagement. We introduce you only when the time is right and the alignment is confirmed.</p>
+          <p>Discretion is not a feature we offer. It is the foundation of how we operate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="rule"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="col-label"><p class="label">Standards</p></div>
+        <div class="col-content">
+          <h2>Every engagement meets the same standard.</h2>
+          <p>We coordinate inspection, transport, title, and all necessary parties so the transaction proceeds with certainty. Our role is to reduce friction and eliminate surprises — not to simply connect parties and step aside.</p>
+          <p>The outcome is a transaction that reflects the seriousness of the vehicles and the clients involved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="rule"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="cta-headline">If this approach resonates, an introduction is the appropriate next step.</h2>
+      <a href="/inquiry" class="cta">Request an Introduction</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--section-padding) 0 clamp(3rem, 6vw, 5rem);
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: 1.2;
+    max-width: 26ch;
+    margin-top: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .rule {
+    height: 1px;
+    background-color: var(--color-border);
+  }
+
+  .section {
+    padding: var(--section-padding) 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .col-label { padding-top: 0.5rem; }
+
+  .col-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .col-content p {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    line-height: 1.8;
+    max-width: 60ch;
+    margin-bottom: 1.25rem;
+  }
+
+  .col-content p:last-child { margin-bottom: 0; }
+
+  .cta-headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 300;
+    color: var(--color-text);
+    line-height: 1.2;
+    max-width: 30ch;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    border: 1px solid rgba(184, 154, 90, 0.4);
+    padding: 1rem 2rem;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .cta:hover {
+    background-color: var(--color-gold-muted);
+    border-color: var(--color-gold);
+  }
+
+  @media (max-width: 720px) {
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>
