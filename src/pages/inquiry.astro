@@ -25,8 +25,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="label">Your Inquiry</p>
         </div>
         <div class="col-form">
-          <form class="inquiry-form" name="contact" method="POST" netlify>
-            <input type="hidden" name="form-name" value="contact" />
+          <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="871dc548-2b92-4e9f-a6c8-271637e13cb3" />
+            <input type="hidden" name="subject" value="New Inquiry — Arcbrim Exotics" />
+            <input type="hidden" name="redirect" value="https://arcbrimexotics.com" />
+            <input type="checkbox" name="botcheck" style="display:none;" />
 
             <div class="field">
               <label for="name">Name</label>
